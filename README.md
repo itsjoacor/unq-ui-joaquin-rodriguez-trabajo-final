@@ -1,11 +1,11 @@
 # unq-ui-joaquin-rodriguez-trabajo-final
   *Tecnologias:*  
 
-    ####Vite:
+####Vite:
       Herramienta de compilacion del proyecto.
-
-    ####React:
+      
+####React:
       Libreria para construir componentes de ui.
-
-    ####Tailwindcss:
+      
+####Tailwindcss:
       Como framework de personalizacion se utilizo tailwindcss, para un desarrollo mas agil, y por comodidad propia.
