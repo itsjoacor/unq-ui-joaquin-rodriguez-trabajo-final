@@ -1,5 +1,5 @@
 # unq-ui-joaquin-rodriguez-trabajo-final
-  *Tecnologias:*  
+#### Frameworks & Libraries:
 
 ####Vite:
 
