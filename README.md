@@ -2,10 +2,13 @@
   *Tecnologias:*  
 
 ####Vite:
-      Herramienta de compilacion del proyecto.
+
+   -Herramienta de compilacion del proyecto.
       
 ####React:
-      Libreria para construir componentes de ui.
+
+   -Libreria para construir componentes de ui.
       
 ####Tailwindcss:
-      Como framework de personalizacion se utilizo tailwindcss, para un desarrollo mas agil, y por comodidad propia.
+
+   -Como framework de personalizacion se utilizo tailwindcss, para un desarrollo mas agil, y por comodidad propia.
