@@ -1,14 +1,11 @@
 # unq-ui-joaquin-rodriguez-trabajo-final
-#### Frameworks & Libraries:
+## Frameworks & Libraries:
 
-####Vite:
-
-   -Herramienta de compilacion del proyecto.
+#### Vite:
+   Herramienta de compilacion del proyecto.
       
-####React:
-
-   -Libreria para construir componentes de ui.
+#### React:
+   Libreria para construir componentes de ui.
       
-####Tailwindcss:
-
-   -Como framework de personalizacion se utilizo tailwindcss, para un desarrollo mas agil, y por comodidad propia.
+#### Tailwindcss:
+   Como framework de personalizacion se utilizo tailwindcss, para un desarrollo mas agil, y por comodidad propia.
