@@ -1,19 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import GamePlaySetUp from "./pages/home/page"
+import Game from "./pages/game/page"
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-      <h1>Comenzando Proyecto, instalando vite</h1>
-      </div>
-
-    </>
-  )
-}
-
-export default App
+	return (
+	  <BrowserRouter>
+		<Routes>
+		  <Route path="/" element={<GamePlaySetUp />} />
+		  <Route path="/game" element={<Game />} />
+		</Routes>
+	  </BrowserRouter>
+	);
+  }
+  
+  export default App;
