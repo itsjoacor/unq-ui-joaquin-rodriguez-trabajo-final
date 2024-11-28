@@ -2,7 +2,7 @@ import React from "react";
 
 function GridMemo({ size, grid, selected, handleSquareClick }) {
 	return (
-		<div className="flex items-center justify-center">
+		<div className="items-center justify-center">
 			<div
 				className={`grid gap-4 ${
 					size === 4

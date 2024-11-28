@@ -7,6 +7,6 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow: hidden; /* Prevent scrollbars */
-    background-color: black; /* Ensure full black background */
+    overflow: hidden;
+    background-color: black;
 }

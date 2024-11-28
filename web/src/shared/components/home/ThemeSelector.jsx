@@ -2,7 +2,7 @@ import React from "react";
 
 function ThemeSelector({ selectedTheme, setSelectedTheme }) {
 	return (
-		<div className="mt-4">
+		<div className="mt-2 pb-6">
 			<h2 className="text-2xl font-semibold mb-4 text-center">
 				Theme Selector
 			</h2>

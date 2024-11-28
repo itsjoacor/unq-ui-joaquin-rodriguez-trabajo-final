@@ -88,34 +88,19 @@ function Game() {
   };
 
   const handleRestartGame = () => {
-    initializeGame(); // Reinitialize the game
+    initializeGame();
   };
 
   const isGameComplete = gameStarted && matchedPairs.length === grid.length;
 
-  // Dynamic container size calculation
-  const squareSize = size === 4 ? 100 : size === 6 ? 80 : 60; // Adjust square size
-  const gridGap = 16; // Gap between squares
-  const gridSize = size * squareSize + (size - 1) * gridGap;
-  const containerSize = gridSize + 80;
-
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-screen bg-black text-white">
-      <div
-        className="flex flex-col items-center justify-center rounded-lg shadow-lg"
-        style={{
-          width: `${containerSize}px`,
-          height: `${containerSize}px`,
-          backgroundColor: "#000", // Black background
-          padding: "20px",
-        }}
-      >
-        <h1 className="text-4xl font-bold mb-6 text-center">
+    <div className="h-screen w-screen bg-black flex items-center justify-center text-white">
+      <div className="flex flex-col items-center">
+        <h1 className="text-4xl font-bold mb-6">
           {isGameComplete ? "You Win!" : "Game Play"}
         </h1>
 
-        {/* Centered Grid */}
-        <div className="flex items-center justify-center">
+        <div className="mt-4">
           <GridMemo
             size={size}
             grid={grid}
@@ -123,25 +108,24 @@ function Game() {
             handleSquareClick={handleSquareClick}
           />
         </div>
-      </div>
 
-      {/* Buttons Section */}
-      <div className="mt-6 flex space-x-4">
-        {isGameComplete ? (
+        <div className="mt-6 flex space-x-4">
+          {isGameComplete && (
+            <button
+              onClick={handleRestartGame}
+              className="px-6 py-3 bg-blue-500 text-white text-lg rounded hover:bg-blue-600"
+            >
+              Restart
+            </button>
+          )}
+
           <button
-            onClick={handleRestartGame}
-            className="px-6 py-3 bg-blue-500 text-white text-lg rounded hover:bg-blue-600"
+            onClick={handleEndGame}
+            className="px-6 py-3 bg-red-500 text-white text-lg rounded hover:bg-red-600"
           >
-            Restart
+            End Game
           </button>
-        ) : null}
-
-        <button
-          onClick={handleEndGame}
-          className="px-6 py-3 bg-red-500 text-white text-lg rounded hover:bg-red-600"
-        >
-          End Game
-        </button>
+        </div>
       </div>
     </div>
   );
