@@ -2,7 +2,7 @@ import React from "react";
 
 function GridMemo({ size, grid, selected, handleSquareClick }) {
 	return (
-		<div className="items-center justify-center">
+		<div className="flex items-center justify-center">
 			<div
 				className={`grid gap-4 ${
 					size === 4
@@ -15,24 +15,28 @@ function GridMemo({ size, grid, selected, handleSquareClick }) {
 				{grid.map((square, index) => (
 					<div
 						key={square.id}
-						className={`flex items-center justify-center ${
-							size === 4
-								? "h-24 w-24"
-								: size === 6
-								? "h-20 w-20"
-								: "h-16 w-16"
-						} rounded cursor-pointer ${
-							square.matched ? "bg-green-500" : "bg-blue-500"
-						}`}
+						className={`relative ${
+							size === 4 ? "h-24 w-24" : size === 6 ? "h-20 w-20" : "h-16 w-16"
+						} cursor-pointer perspective`}
 						onClick={() => handleSquareClick(index)}
 					>
-						{selected.includes(index) || square.matched ? (
-							<span className="text-white text-xl font-bold">
+						<div
+							className={`absolute inset-0 transform transition-transform duration-500 transform-preserve-3d ${
+								selected.includes(index) || square.matched ? "rotate-y-180" : ""
+							}`}
+						>
+							<div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white text-xl font-bold rounded backface-hidden">
+								?
+							</div>
+
+							<div
+								className={`absolute inset-0 flex items-center justify-center ${
+									square.matched ? "bg-green-500" : "bg-yellow-500"
+								} text-white text-xl font-bold rounded transform rotate-y-180 backface-hidden`}
+							>
 								{square.value}
-							</span>
-						) : (
-							<div className="text-white font-bold">?</div>
-						)}
+							</div>
+						</div>
 					</div>
 				))}
 			</div>

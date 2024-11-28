@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function GamePlaySetUp() {
   const [selectedSize, setSelectedSize] = useState(4);
-  const [selectedTheme, setSelectedTheme] = useState("Numbers"); // Default theme
+  const [selectedTheme, setSelectedTheme] = useState("Numbers");
   const navigate = useNavigate();
 
   const handleStart = () => {
