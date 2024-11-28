@@ -2,28 +2,30 @@ import React from "react";
 
 function ThemeSelector({ selectedTheme, setSelectedTheme }) {
 	return (
-		<div className="mt-0 pb-6"> 
-			<h2 className="text-2xl font-semibold mb-2 text-center pb-2 text-red-500">Theme Selector</h2>
+		<div className="mt-4">
+			<h2 className="text-2xl font-semibold mb-4 text-center">
+				Theme Selector
+			</h2>
 			<div className="flex space-x-4 justify-center">
 				<button
-					onClick={() => setSelectedTheme("Opcion 1")}
+					onClick={() => setSelectedTheme("Numbers")}
 					className={`px-6 py-3 text-lg font-bold rounded ${
-						selectedTheme === "Opcion 1"
+						selectedTheme === "Numbers"
 							? "bg-blue-500 text-white"
 							: "bg-gray-700 text-gray-300 hover:bg-gray-600"
 					}`}
 				>
-					Opcion 1
+					Numbers
 				</button>
 				<button
-					onClick={() => setSelectedTheme("Opcion 2")}
+					onClick={() => setSelectedTheme("Letters")}
 					className={`px-6 py-3 text-lg font-bold rounded ${
-						selectedTheme === "Opcion 2"
+						selectedTheme === "Letters"
 							? "bg-blue-500 text-white"
 							: "bg-gray-700 text-gray-300 hover:bg-gray-600"
 					}`}
 				>
-					Opcion 2
+					Letters
 				</button>
 			</div>
 		</div>

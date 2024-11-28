@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function GamePlaySetUp() {
 	const [selectedSize, setSelectedSize] = useState(4);
-	const [selectedTheme, setSelectedTheme] = useState("Opcion 1"); // Default theme
+	const [selectedTheme, setSelectedTheme] = useState("Numbers"); // Default theme
 	const navigate = useNavigate();
 
 	const handleStart = () => {
@@ -15,19 +15,17 @@ function GamePlaySetUp() {
 	return (
 		<div className="flex items-center justify-center h-screen w-screen text-white">
 			<div className="bg-black rounded-lg shadow-lg p-10 w-[90%] max-w-md flex flex-col items-center justify-center">
-				<h1 className="text-4xl font-bold mb-6 text-center text-yellow-500">Memo Test</h1>
+				<h1 className="text-4xl font-bold mb-6 text-center">Memo Test</h1>
 
 				<BoardSize
 					selectedSize={selectedSize}
 					setSelectedSize={setSelectedSize}
 				/>
 
-				<div className="mt-0 ">
-					<ThemeSelector
-						selectedTheme={selectedTheme}
-						setSelectedTheme={setSelectedTheme}
-					/>
-				</div>
+				<ThemeSelector
+					selectedTheme={selectedTheme}
+					setSelectedTheme={setSelectedTheme}
+				/>
 
 				<button
 					onClick={handleStart}
