@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import GamePlaySetUp from "./pages/home/page"
 import Game from "./pages/game/page"
-import './App.css'
+
 
 function App() {
 	return (
