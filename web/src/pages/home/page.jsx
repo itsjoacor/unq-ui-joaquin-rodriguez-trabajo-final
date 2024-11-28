@@ -4,41 +4,40 @@ import ThemeSelector from "../../shared/components/home/ThemeSelector";
 import { useNavigate } from "react-router-dom";
 
 function GamePlaySetUp() {
-  const [selectedSize, setSelectedSize] = useState(4);
-  const [selectedTheme, setSelectedTheme] = useState("Opcion 1"); // Default theme
-  const navigate = useNavigate();
+	const [selectedSize, setSelectedSize] = useState(4);
+	const [selectedTheme, setSelectedTheme] = useState("Opcion 1"); // Default theme
+	const navigate = useNavigate();
 
-  const handleStart = () => {
-    navigate("/game", { state: { size: selectedSize, theme: selectedTheme } });
-  };
+	const handleStart = () => {
+		navigate("/game", { state: { size: selectedSize, theme: selectedTheme } });
+	};
 
-  return (
-    <div className="flex items-center justify-center h-screen w-screen text-white">
-      <div className="bg-black rounded-lg shadow-lg p-10 w-[90%] max-w-md flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold mb-6 text-center">Memo Test</h1>
+	return (
+		<div className="flex items-center justify-center h-screen w-screen text-white">
+			<div className="bg-black rounded-lg shadow-lg p-10 w-[90%] max-w-md flex flex-col items-center justify-center">
+				<h1 className="text-4xl font-bold mb-6 text-center text-yellow-500">Memo Test</h1>
 
+				<BoardSize
+					selectedSize={selectedSize}
+					setSelectedSize={setSelectedSize}
+				/>
 
-        <BoardSize
-          selectedSize={selectedSize}
-          setSelectedSize={setSelectedSize}
-        />
+				<div className="mt-0 ">
+					<ThemeSelector
+						selectedTheme={selectedTheme}
+						setSelectedTheme={setSelectedTheme}
+					/>
+				</div>
 
-
-        <ThemeSelector
-          selectedTheme={selectedTheme}
-          setSelectedTheme={setSelectedTheme}
-        />
-
-
-        <button
-          onClick={handleStart}
-          className="mt-6 px-6 py-3 bg-green-500 text-white text-lg font-bold rounded hover:bg-green-600 w-full"
-        >
-          Start
-        </button>
-      </div>
-    </div>
-  );
+				<button
+					onClick={handleStart}
+					className="mt-6 px-6 py-3 bg-green-500 text-white text-lg font-bold rounded hover:bg-green-600 w-full"
+				>
+					Start
+				</button>
+			</div>
+		</div>
+	);
 }
 
 export default GamePlaySetUp;

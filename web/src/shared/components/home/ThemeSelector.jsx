@@ -2,10 +2,9 @@ import React from "react";
 
 function ThemeSelector({ selectedTheme, setSelectedTheme }) {
 	return (
-		<div className="mt-4">
-			<h2 className="text-2xl font-semibold mb-4 text-center">Theme Selector</h2>
-			<div className="flex space-x-6 justify-center">
-
+		<div className="mt-0 pb-6"> 
+			<h2 className="text-2xl font-semibold mb-2 text-center pb-2 text-red-500">Theme Selector</h2>
+			<div className="flex space-x-4 justify-center">
 				<button
 					onClick={() => setSelectedTheme("Opcion 1")}
 					className={`px-6 py-3 text-lg font-bold rounded ${
@@ -16,8 +15,6 @@ function ThemeSelector({ selectedTheme, setSelectedTheme }) {
 				>
 					Opcion 1
 				</button>
-
-
 				<button
 					onClick={() => setSelectedTheme("Opcion 2")}
 					className={`px-6 py-3 text-lg font-bold rounded ${
