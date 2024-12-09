@@ -2,9 +2,11 @@ import React from "react";
 
 function BoardSize({ selectedSize, setSelectedSize }) {
 	return (
-		<div className="mb-6">
-			<h2 className="text-2xl font-semibold mb-2 pb-2 text-red-500">Choose Grid Size</h2>
-			<div className="flex space-x-6 pb-0">
+		<div className="flex flex-col items-center justify-center h-full mb-6">
+			<h2 className="text-2xl font-semibold mb-4 text-red-500">
+				Choose Grid Size
+			</h2>
+			<div className="flex space-x-6">
 				{[4, 6, 8].map((size) => (
 					<button
 						key={size}
