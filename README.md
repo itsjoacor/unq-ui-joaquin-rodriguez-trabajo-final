@@ -1,15 +1,15 @@
 # Como levantar el proyecto:
 
 ## Opcion A:
-#### Ingresar al siguiente link desde la web: [https://unquimemotest-jr.netlify.app]
+#### Ingresar al siguiente link desde la web: https://unquimemotest-jr.netlify.app
 
 ## Opcion B:
 #### Levantar el proyecto localmente:
-- *Paso 1:* Clonar el repositorio en una carpeta de la computadora, de no saber hacerlo esta el siguiente link: [https://www.youtube.com/watch?v=rAnn6vtLm90]
+- *Paso 1:* Clonar el repositorio en una carpeta de la computadora, de no saber hacerlo esta el siguiente link: https://www.youtube.com/watch?v=rAnn6vtLm90
   
 - *Paso 2:* Abrir la carpeta conteniendo el repositorio clonado con IDE (el de preferencia) y abrir una terminal. O tambien, abrir el IDE desde cero y navegar en una terminal hasta la ubicacion del proyecto.
 
-- *Paso 3:* Revisar si tienes instalado Node.js o npm, de lo contrario instalarlos. Puedes constular el siguiente link para windows [https://www.youtube.com/watch?v=Z-Ofqd2yBCc]
+- *Paso 3:* Revisar si tienes instalado Node.js o npm, de lo contrario instalarlos. Puedes constular el siguiente link para windows https://www.youtube.com/watch?v=Z-Ofqd2yBCc
   
 - *Paso 4:* Una vez que se cumplan los pasos 2 y 3, debes instalar las dependencias del proyecto corriendo por terminal el siguiente comando: "npm run dev".
   
