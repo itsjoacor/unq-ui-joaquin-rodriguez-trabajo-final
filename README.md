@@ -1,7 +1,7 @@
 # Como levantar el proyecto:
 
 ## Opcion A:
-#### Ingresar al siguiente link desde la web: [unquimemotest-jr.netlify.app]
+#### Ingresar al siguiente link desde la web: [https://unquimemotest-jr.netlify.app]
 
 ## Opcion B:
 #### Levantar el proyecto localmente:
