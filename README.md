@@ -1,4 +1,3 @@
-# unq-ui-joaquin-rodriguez-trabajo-final
 # Como levantar el proyecto:
 
 ## Opcion A:
