@@ -15,7 +15,7 @@ function GamePlaySetUp() {
   return (
     <div className="flex items-center justify-center min-h-screen min-w-screen bg-black text-white">
       <div className="bg-black rounded-lg shadow-lg p-10 w-[90%] max-w-md flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold mb-6 text-center">Memo Test</h1>
+        <h1 className="text-6xl font-bold mb-6 text-center pb-6">Memo Test</h1>
 
         <BoardSize
           selectedSize={selectedSize}
@@ -29,7 +29,8 @@ function GamePlaySetUp() {
 
         <button
           onClick={handleStart}
-          className="mt-6 px-6 py-3 bg-green-500 text-white text-lg font-bold rounded hover:bg-green-600 w-full"
+          className="mt-6 px-6 py-3 text-white text-2xl font-bold rounded  w-full
+          bg-gradient-to-r from-green-600 to-green-500 text-white-300 hover:from-green-500 hover:to-green-500"
         >
           Start
         </button>

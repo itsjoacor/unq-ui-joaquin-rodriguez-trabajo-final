@@ -3,7 +3,7 @@ import React from "react";
 function BoardSize({ selectedSize, setSelectedSize }) {
 	return (
 		<div className="flex flex-col items-center justify-center h-full">
-			<h2 className="text-2xl font-semibold mb-4 text-red-500">
+			<h2 className="text-4xl font-semibold mb-4 text-red-500">
 				Choose Grid Size
 			</h2>
 			<div className="flex space-x-6">

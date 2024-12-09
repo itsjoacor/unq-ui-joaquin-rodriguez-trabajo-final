@@ -2,8 +2,8 @@ import React from "react";
 
 function ThemeSelector({ selectedTheme, setSelectedTheme }) {
 	return (
-		<div className="mt-2 pb-6">
-			<h2 className="text-2xl font-semibold mb-4 text-center">
+		<div className="mt-2 pb-1 pt-6">
+			<h2 className="text-4xl font-semibold mb-4 text-center text-red-500">
 				Theme Selector
 			</h2>
 			<div className="flex space-x-4 justify-center">
@@ -11,8 +11,8 @@ function ThemeSelector({ selectedTheme, setSelectedTheme }) {
 					onClick={() => setSelectedTheme("Numbers")}
 					className={`px-6 py-3 text-lg font-bold rounded ${
 						selectedTheme === "Numbers"
-							? "bg-blue-500 text-white"
-							: "bg-gray-700 text-gray-300 hover:bg-gray-600"
+							? "bg-gradient-to-r from-indigo-500 to-blue-500 text-white"
+							: "bg-gradient-to-r from-gray-700 to-gray-500 text-gray-300 hover:from-gray-600 hover:to-gray-500"
 					}`}
 				>
 					Numbers
@@ -21,8 +21,8 @@ function ThemeSelector({ selectedTheme, setSelectedTheme }) {
 					onClick={() => setSelectedTheme("Letters")}
 					className={`px-6 py-3 text-lg font-bold rounded ${
 						selectedTheme === "Letters"
-							? "bg-blue-500 text-white"
-							: "bg-gray-700 text-gray-300 hover:bg-gray-600"
+							? "bg-gradient-to-r from-indigo-500 to-blue-500 text-white"
+							: "bg-gradient-to-r from-gray-700 to-gray-500 text-gray-300 hover:from-gray-600 hover:to-gray-500"
 					}`}
 				>
 					Letters
