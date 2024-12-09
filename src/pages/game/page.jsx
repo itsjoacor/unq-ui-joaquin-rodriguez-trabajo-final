@@ -12,10 +12,10 @@ function Game() {
 	const [selected, setSelected] = useState([]);
 	const [matchedPairs, setMatchedPairs] = useState([]);
 	const [gameStarted, setGameStarted] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		if (!theme || !size) {
-			console.error("Invalid theme or size. Redirecting to home.");
 			navigate("/");
 		} else {
 			initializeGame();
@@ -52,7 +52,7 @@ function Game() {
 	};
 
 	const handleSquareClick = (index) => {
-		if (!gameStarted) return;
+		if (!gameStarted || loading) return;
 		if (
 			selected.length === 2 ||
 			grid[index].matched ||
@@ -82,7 +82,6 @@ function Game() {
 			}, 450);
 		}
 
-
 		setTimeout(() => setSelected([]), 1000);
 	};
 
@@ -91,45 +90,55 @@ function Game() {
 	};
 
 	const handleRestartGame = () => {
-		initializeGame();
+		setLoading(true);
+		setTimeout(() => {
+			initializeGame();
+			setLoading(false); 
+		}, 600);
 	};
 
 	const isGameComplete = gameStarted && matchedPairs.length === grid.length;
 
 	return (
 		<div className="h-screen w-screen bg-black flex items-center justify-center text-white">
-			<div className="flex flex-col items-center">
-				<h1 className="text-4xl font-bold mb-6">
-					{isGameComplete ? "You Win!" : "Game Play"}
-				</h1>
-
-				<div className="mt-4">
-					<GridMemo
-						size={size}
-						grid={grid}
-						selected={selected}
-						handleSquareClick={handleSquareClick}
-					/>
+			{loading ? (
+				<div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
+					Restarting...
 				</div>
+			) : (
+				<div className="flex flex-col items-center">
+					<h1 className="text-4xl font-bold mb-6">
+						{isGameComplete ? "You Win!" : "Game Play"}
+					</h1>
 
-				<div className="mt-6 flex space-x-4 items-center justify-center">
-					{isGameComplete && (
+					<div className="mt-4">
+						<GridMemo
+							size={size}
+							grid={grid}
+							selected={selected}
+							handleSquareClick={handleSquareClick}
+						/>
+					</div>
+
+					<div className="mt-6 flex space-x-4 items-center justify-center">
+						{isGameComplete && (
+							<button
+								onClick={handleRestartGame}
+								className="px-6 py-3 bg-blue-500 text-white text-lg rounded hover:bg-blue-600"
+							>
+								Restart
+							</button>
+						)}
+
 						<button
-							onClick={handleRestartGame}
-							className="px-6 py-3 bg-blue-500 text-white text-lg rounded hover:bg-blue-600"
+							onClick={handleEndGame}
+							className="px-6 py-3 bg-red-500 text-white text-lg rounded hover:bg-red-600"
 						>
-							Restart
+							End Game
 						</button>
-					)}
-
-					<button
-						onClick={handleEndGame}
-						className="px-6 py-3 bg-red-500 text-white text-lg rounded hover:bg-red-600"
-					>
-						End Game
-					</button>
+					</div>
 				</div>
-			</div>
+			)}
 		</div>
 	);
 }
