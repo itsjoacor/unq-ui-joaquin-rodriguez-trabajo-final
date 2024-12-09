@@ -107,7 +107,7 @@ function Game() {
 				</div>
 			) : (
 				<div className="flex flex-col items-center">
-					<h1 className="text-4xl font-bold mb-6">
+					<h1 className="text-6xl font-bold mb-6">
 						{isGameComplete ? "You Win!" : "Game Play"}
 					</h1>
 
@@ -132,7 +132,7 @@ function Game() {
 
 						<button
 							onClick={handleEndGame}
-							className="px-6 py-3 bg-red-500 text-white text-lg rounded hover:bg-red-600"
+							className="px-6 py-3 font-bold bg-red-600 text-white text-lg rounded hover:bg-red-500"
 						>
 							End Game
 						</button>

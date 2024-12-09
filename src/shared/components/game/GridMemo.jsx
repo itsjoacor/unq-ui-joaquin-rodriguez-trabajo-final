@@ -41,18 +41,18 @@ function GridMemo({ size, grid, selected, handleSquareClick }) {
                 selected.includes(index) || square.matched ? "rotate-y-180" : ""
               }`}
             >
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-5xl font-bold rounded-xl shadow-lg backface-hidden">
-                ?
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white text-6xl font-bold rounded-xl shadow-lg backface-hidden">
+
               </div>
 
               <div
-                className={`absolute inset-0 flex items-center justify-center ${
-                  square.matched ? "bg-green-500" : "bg-yellow-400"
-                } border-4 border-transparent text-black text-2xl font-bold rounded-lg transform rotate-y-180 backface-hidden`}
+                className={`absolute inset-0 flex items-center justify-center rounded-lg transform rotate-y-180 backface-hidden text-8xl ${
+                  square.matched
+                    ? "bg-gradient-to-r from-green-500 to-emerald-300"
+                    : "bg-gradient-to-r from-orange-500 to-yellow-400"
+                }`}
               >
-                <div className="bg-white rounded-lg flex items-center justify-center w-3/4 h-3/4">
-                  <span className="text-3xl font-bold">{square.value}</span>
-                </div>
+                <span className="text-3xl font-bold text-white">{square.value}</span>
               </div>
             </div>
           </div>
