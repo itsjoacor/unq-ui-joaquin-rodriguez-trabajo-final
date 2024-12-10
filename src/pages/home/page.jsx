@@ -28,24 +28,30 @@ function GamePlaySetUp() {
 			</button>
 
 			<div
-				className="bg-black rounded-lg shadow-lg p-10 w-[90%] max-w-md flex flex-col items-center justify-center
+				className="bg-black rounded-lg shadow-lg p-6 md:p-10 w-[95%] max-w-md flex flex-col items-center justify-center
       bg-gradient-to-r from-purple-500 to-fuchsia-400 bg-clip-text text-transparent"
 			>
-				<h1 className="text-6xl font-bold mb-6 text-center pb-6">Memo Test</h1>
+				<h1 className="text-5xl md:text-6xl font-bold mb-4 md:mb-6 text-center">
+					Memo Test
+				</h1>
 
-				<BoardSize
-					selectedSize={selectedSize}
-					setSelectedSize={setSelectedSize}
-				/>
+				<div className="w-full">
+					<BoardSize
+						selectedSize={selectedSize}
+						setSelectedSize={setSelectedSize}
+					/>
+				</div>
 
-				<ThemeSelector
-					selectedTheme={selectedTheme}
-					setSelectedTheme={setSelectedTheme}
-				/>
+				<div className="w-full mt-4 md:mt-6">
+					<ThemeSelector
+						selectedTheme={selectedTheme}
+						setSelectedTheme={setSelectedTheme}
+					/>
+				</div>
 
 				<button
 					onClick={handleStart}
-					className="mt-6 px-6 py-3 text-white text-2xl font-bold rounded w-1/3
+					className="mt-6 px-4 md:px-6 py-2 md:py-3 text-white text-xl md:text-2xl font-bold rounded w-2/3 md:w-1/3
   bg-gradient-to-r from-emerald-500 to-lime-400 hover:from-green-500 hover:to-green-500"
 				>
 					Start

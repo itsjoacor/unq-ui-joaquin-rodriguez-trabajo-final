@@ -124,7 +124,7 @@ function Game() {
 						{isGameComplete && (
 							<button
 								onClick={handleRestartGame}
-								className="px-6 py-3 bg-blue-500 text-white text-lg rounded hover:bg-blue-600"
+								className="px-6 py-3 font-bold bg-gradient-to-r from-cyan-400 to-indigo-500 text-white text-lg rounded hover:bg-blue-600"
 							>
 								Restart
 							</button>
@@ -132,7 +132,7 @@ function Game() {
 
 						<button
 							onClick={handleEndGame}
-							className="px-6 py-3 font-bold bg-red-600 text-white text-lg rounded hover:bg-red-500"
+							className="px-6 py-3 font-bold bg-gradient-to-r from-red-500 to-red-700 text-white text-lg rounded hover:bg-red-600"
 						>
 							End Game
 						</button>
