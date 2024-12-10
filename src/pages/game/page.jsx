@@ -39,7 +39,6 @@ function Game() {
 				String.fromCharCode(65 + i)
 			);
 		} else {
-			console.error("Invalid theme selected");
 			return;
 		}
 
@@ -133,12 +132,22 @@ function Game() {
 				</div>
 			) : (
 				<>
-					<h1 className="text-5xl font-bold">
-						{isGameComplete
-							? `Game Over: ${multiplayer ? winner : "You Win!"}`
-							: multiplayer
-							? `Player ${currentPlayer}'s Turn`
-							: "Game Play"}
+					<h1 className="text-5xl font-bold text-center">
+						{isGameComplete ? (
+							<>
+								<span>Game Over:</span>
+								<br />
+								<span>{multiplayer ? winner : "You Win!"}</span>
+							</>
+						) : multiplayer ? (
+							<>
+								<span>Player {currentPlayer}'s Turn</span>
+							</>
+						) : (
+							<>
+								<span>Game Play</span>
+							</>
+						)}
 					</h1>
 
 					{multiplayer && (
