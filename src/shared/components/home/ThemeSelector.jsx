@@ -2,8 +2,8 @@ import React from "react";
 
 function ThemeSelector({ selectedTheme, setSelectedTheme }) {
 	return (
-		<div className="mt-6 pb-4 pt-6 flex flex-col items-center justify-center">
-			<h2 className="text-4xl font-semibold mb-4 text-center bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent">
+		<div className="mt-2 pt-4 flex flex-col items-center justify-center">
+			<h2 className="text-4xl font-semibold mb-1 text-center bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent">
 				Theme Selector
 			</h2>
 			<div className="flex space-x-4">
