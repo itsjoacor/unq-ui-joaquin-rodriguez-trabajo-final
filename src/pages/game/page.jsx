@@ -125,73 +125,55 @@ function Game() {
       ? "Player 2 Wins!"
       : "It's a Tie!";
 
-  return (
-    <div className="h-screen w-screen bg-black flex flex-col items-center justify-center text-white">
-      {loading ? (
-        <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
-          Restarting...
+      return (
+        <div className="h-screen w-screen bg-black flex flex-col items-center justify-between text-white">
+          {loading ? (
+            <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
+              Restarting...
+            </div>
+          ) : (
+            <>
+              <h1 className="text-5xl font-bold mt-4">
+                {isGameComplete
+                  ? `Game Over: ${multiplayer ? winner : "You Win!"}`
+                  : multiplayer
+                  ? `Player ${currentPlayer}'s Turn`
+                  : "Game Play"}
+              </h1>
+      
+              {multiplayer && (
+                <div className="flex justify-around w-full max-w-md mt-4">
+                  <div className={`text-lg ${currentPlayer === 1 ? "font-bold" : ""}`}>
+                    Player 1: {scores.player1}
+                  </div>
+                  <div className={`text-lg ${currentPlayer === 2 ? "font-bold" : ""}`}>
+                    Player 2: {scores.player2}
+                  </div>
+                </div>
+              )}
+      
+              <div className="flex-grow flex items-center justify-center">
+                <GridMemo
+                  size={size}
+                  grid={grid}
+                  selected={selected}
+                  handleSquareClick={handleSquareClick}
+                />
+              </div>
+      
+              <div className="mb-6">
+                <button
+                  onClick={handleEndGame}
+                  className="px-6 py-3 font-bold bg-gradient-to-r from-red-500 to-red-700 text-white text-lg rounded hover:bg-red-600"
+                >
+                  End Game
+                </button>
+              </div>
+            </>
+          )}
         </div>
-      ) : (
-        <>
-          <h1 className="text-5xl font-bold mb-6">
-            {isGameComplete
-              ? `Game Over: ${multiplayer ? winner : "You Win!"}`
-              : multiplayer
-              ? `Player ${currentPlayer}'s Turn`
-              : "Game Play"}
-          </h1>
-
-          <div className="flex justify-around w-full max-w-md mb-4">
-            {multiplayer && (
-              <>
-                <div
-                  className={`text-lg ${
-                    currentPlayer === 1 ? "font-bold" : ""
-                  }`}
-                >
-                  Player 1: {scores.player1}
-                </div>
-                <div
-                  className={`text-lg ${
-                    currentPlayer === 2 ? "font-bold" : ""
-                  }`}
-                >
-                  Player 2: {scores.player2}
-                </div>
-              </>
-            )}
-          </div>
-
-          <div className="mt-4">
-            <GridMemo
-              size={size}
-              grid={grid}
-              selected={selected}
-              handleSquareClick={handleSquareClick}
-            />
-          </div>
-
-          <div className="mt-6 flex space-x-4 items-center justify-center">
-            {isGameComplete && (
-              <button
-                onClick={handleRestartGame}
-                className="px-6 py-3 font-bold bg-gradient-to-r from-cyan-400 to-indigo-500 text-white text-lg rounded hover:bg-blue-600"
-              >
-                Restart
-              </button>
-            )}
-
-            <button
-              onClick={handleEndGame}
-              className="px-6 py-3 font-bold bg-gradient-to-r from-red-500 to-red-700 text-white text-lg rounded hover:bg-red-600"
-            >
-              End Game
-            </button>
-          </div>
-        </>
-      )}
-    </div>
-  );
+      );
+      
 }
 
 export default Game;

@@ -1,26 +1,29 @@
 import React, { useState, useEffect } from "react";
 
 function GridMemo({ size, grid, selected, handleSquareClick }) {
-  const [squareSize, setSquareSize] = useState("h-24 w-24");
+  const [squareSize, setSquareSize] = useState("");
 
   useEffect(() => {
     const updateSquareSize = () => {
-      if (window.innerWidth < 640) {
-        setSquareSize(size === 8 ? "h-12 w-12" : size === 6 ? "h-16 w-16" : "h-20 w-20");
-      } else if (window.innerWidth < 1024) {
-        setSquareSize(size === 8 ? "h-16 w-16" : size === 6 ? "h-20 w-20" : "h-24 w-24");
+      const windowWidth = window.innerWidth;
+
+      if (windowWidth < 640) {
+        setSquareSize(size === 8 ? "h-10 w-10" : size === 6 ? "h-14 w-14" : "h-16 w-16");
+      } else if (windowWidth < 1024) {
+        setSquareSize(size === 8 ? "h-14 w-14" : size === 6 ? "h-16 w-16" : "h-20 w-20");
       } else {
-        setSquareSize(size === 8 ? "h-20 w-20" : size === 6 ? "h-24 w-24" : "h-28 w-28");
+        setSquareSize(size === 8 ? "h-16 w-16" : size === 6 ? "h-20 w-20" : "h-24 w-24");
       }
     };
 
     updateSquareSize();
     window.addEventListener("resize", updateSquareSize);
+
     return () => window.removeEventListener("resize", updateSquareSize);
   }, [size]);
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center mt-4">
       <div
         className={`grid gap-2 sm:gap-3 md:gap-4 ${
           size === 4
@@ -41,9 +44,7 @@ function GridMemo({ size, grid, selected, handleSquareClick }) {
                 selected.includes(index) || square.matched ? "rotate-y-180" : ""
               }`}
             >
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white text-6xl font-bold rounded-xl shadow-lg backface-hidden">
-
-              </div>
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white text-6xl font-bold rounded-xl shadow-lg backface-hidden" />
 
               <div
                 className={`absolute inset-0 flex items-center justify-center rounded-lg transform rotate-y-180 backface-hidden text-8xl ${
@@ -52,7 +53,9 @@ function GridMemo({ size, grid, selected, handleSquareClick }) {
                     : "bg-gradient-to-r from-orange-500 to-yellow-400"
                 }`}
               >
-                <span className="text-3xl font-bold text-white">{square.value}</span>
+                <span className="text-3xl font-bold text-white">
+                  {square.value}
+                </span>
               </div>
             </div>
           </div>
