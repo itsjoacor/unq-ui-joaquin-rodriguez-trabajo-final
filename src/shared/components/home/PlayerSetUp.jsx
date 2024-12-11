@@ -4,7 +4,7 @@ function PlayersSetUp({ multiplayer, setMultiplayer }) {
 	return (
 		<div className="mt-6">
 			<h2 className="text-4xl font-semibold mb-2 text-center bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent">
-				Player Quantity
+				Player Mode
 			</h2>
 			<div className="mt-1 flex space-x-4 justify-center">
 				<button

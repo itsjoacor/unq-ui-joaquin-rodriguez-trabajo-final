@@ -12,11 +12,11 @@ function Instructions() {
 			<p className="text-lg mb-4">Welcome to Memo Test! Here's how to play:</p>
 			<ul className="list-disc text-left space-y-2">
 				<li>Choose the grid size to determine the difficulty level.</li>
-				<li>Select a theme: Numbers or Letters.</li>
-				<li>Select Playing syle, single or multiplayer.</li>
+				<li>Select a theme: Numbers or Flags.</li>
+				<li>Select how you want to play, single or multiplayer.</li>
 				<li>If you chose single player, you play until you win, just for fun!</li>
-				<li>If you chose multiplayer, you compete against another player.</li>
-				<li>The first player turn squares until missing a pair.</li>
+				<li>If you chose multiplayer, you compete against another player, locally.</li>
+				<li>The first player turns squares until missing a pair.</li>
 				<li>Match all possible pairs to win the game!</li>
 				<li>There's no time or move limits</li>
 			</ul>

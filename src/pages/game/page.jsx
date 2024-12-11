@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import GridMemo from "../../shared/components/game/GridMemo";
 import GameTitle from "../../shared/components/game/GameTitle";
 import PlayerSelector from "../../shared/components/game/PlayerSelector";
+import flags from "../../constants/flags";
 
 function Game() {
   const navigate = useNavigate();
@@ -36,10 +37,12 @@ function Game() {
     let themeItems = [];
     if (theme === "Numbers") {
       themeItems = Array.from({ length: totalPairs }, (_, i) => i + 1);
-    } else if (theme === "Letters") {
-      themeItems = Array.from({ length: totalPairs }, (_, i) =>
-        String.fromCharCode(65 + i)
-      );
+    } else if (theme === "Flags") {
+      if (flags.length < totalPairs) {
+        console.error("Not enough flags available for the selected grid size");
+        return;
+      }
+      themeItems = flags.slice(0, totalPairs);
     } else {
       return;
     }

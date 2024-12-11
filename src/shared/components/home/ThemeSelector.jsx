@@ -18,14 +18,14 @@ function ThemeSelector({ selectedTheme, setSelectedTheme }) {
 					Numbers
 				</button>
 				<button
-					onClick={() => setSelectedTheme("Letters")}
+					onClick={() => setSelectedTheme("Flags")}
 					className={`w-32 h-12 flex items-center justify-center text-lg font-bold rounded ${
-						selectedTheme === "Letters"
+						selectedTheme === "Flags"
 							? "bg-gradient-to-r from-blue-600 to-cyan-400 text-white"
 							: "bg-gradient-to-r from-gray-700 to-gray-500 text-white hover:from-gray-600 hover:to-gray-500"
 					}`}
 				>
-					Letters
+					Flags
 				</button>
 			</div>
 		</div>
