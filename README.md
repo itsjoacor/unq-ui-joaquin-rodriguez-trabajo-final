@@ -13,7 +13,7 @@
   
 - *Paso 4:* Una vez que se cumplan los pasos 2 y 3, debes instalar las dependencias del proyecto corriendo por terminal el siguiente comando: "npm run dev".
   
-- *Paso 5:* Si todo salio bien deberias ver algo como "   ➜  Local:   http://localhost:5173/", si fue asi, haz click derecho sobre el link o pegalo en el buscador web y el proyecto se visualizara. De lo contrario sigue al Paso 6.
+- *Paso 5:* Si todo salio bien deberias ver algo como "   ➜  Local:   http://localhost:5173/", si fue asi, haz ctrl+click derecho sobre el link o pegalo en el buscador web y el proyecto se visualizara. De lo contrario sigue al Paso 6.
   
 - *Paso 6:* Si el paso 4 falla, intenta correr el comando "npm install --fix", eso deberia ayudar. Y volver a repetir desde el paso 4. Si aun no funciona, segui al Paso 7.
   
