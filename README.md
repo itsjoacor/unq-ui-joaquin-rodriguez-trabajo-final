@@ -1,4 +1,4 @@
-# Como levantar el proyecto:
+# Como visualizar el proyecto:
 
 ## Opcion A:
 #### Ingresar al siguiente link desde la web: https://unquimemotest-jr.netlify.app
