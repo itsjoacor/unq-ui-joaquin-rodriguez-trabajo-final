@@ -13,11 +13,16 @@ function Instructions() {
 			<ul className="list-disc text-left space-y-2">
 				<li>Choose the grid size to determine the difficulty level.</li>
 				<li>Select a theme: Numbers or Letters.</li>
+				<li>Select Playing syle, single or multiplayer.</li>
+				<li>If you chose single player, you play until you win, just for fun!</li>
+				<li>If you chose multiplayer, you compete against another player.</li>
+				<li>The first player turn squares until missing a pair.</li>
 				<li>Match all possible pairs to win the game!</li>
+				<li>There's no time or move limits</li>
 			</ul>
 			<button
 				onClick={handleGoHome}
-				className="mt-6 px-6 py-3 bg-gradient-to-r from-indigo-500 to-blue-400 text-white text-lg font-bold rounded hover:from-blue-400 hover:to-blue-300"
+				className="mt-6 px-6 py-3 bg-gradient-to-r from-red-500 to-red-400 text-white text-lg font-bold rounded hover:from-blue-400 hover:to-blue-300"
 			>
 				Go Back
 			</button>
